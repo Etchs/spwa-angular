@@ -31,14 +31,18 @@ function NarrowItDownController(MenuSearchService) {
   ctrl.found = [];
 
   ctrl.search = function () {
-    var promise = MenuSearchService.getMatchedMenuItems(ctrl.searchTerm);
+    if(ctrl.searchTerm !== '') {
+      var promise = MenuSearchService.getMatchedMenuItems(ctrl.searchTerm);
 
-    promise.then(function (foundItems) {
-      ctrl.found = foundItems;
-    })
-    .catch(function (error) {
-      console.log(error);
-    })
+      promise.then(function (foundItems) {
+        ctrl.found = foundItems;
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+    } else {
+      ctrl.found = [];
+    }
   };
 
   ctrl.removeItem = function (itemIndex) {
