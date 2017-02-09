@@ -6,6 +6,7 @@
 
 
   MenuDataService.$inject = ['$http', 'ApiBasePath'];
+
   function MenuDataService($http, ApiBasePath) {
     var service = this;
 
