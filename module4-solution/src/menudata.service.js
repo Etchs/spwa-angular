@@ -6,7 +6,7 @@
 
 
   MenuDataService.$inject = ['$http', 'ApiBasePath'];
-  function MenuDataService($q, $timeout) {
+  function MenuDataService($http, ApiBasePath) {
     var service = this;
 
     // List of category items
