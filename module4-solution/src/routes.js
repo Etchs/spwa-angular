@@ -27,9 +27,7 @@
       controller: 'CategoriesController as categoriesCtrl',
       resolve: {
         categories: ['MenuDataService', function(MenuDataService) {
-          return MenuDataService.getAllCategories().then(function(cats){
-            return cats;
-          });
+          return MenuDataService.getAllCategories();
         }]
       }
     })
