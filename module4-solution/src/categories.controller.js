@@ -8,7 +8,7 @@
 	CategoriesController.$inject = ['categories'];
 	function CategoriesController(categories) {
 		var categoriesCtrl = this;
-		categoriesCtrl.categories = categories;
+		categoriesCtrl.categories = categories.data;
 	}
 
 })();

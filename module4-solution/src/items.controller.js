@@ -7,9 +7,9 @@
 	// 'items' is injected through state's resolve
 	ItemsController.$inject = ['items', '$stateParams']
 	function ItemsController(items, $stateParams) {
-		var categoriesCtrl = this;
-		categoriesCtrl.categoryShortName = $stateParams.categoryShortName;
-		categoriesCtrl.items = items;
+		var itemsCtrl = this;
+		itemsCtrl.categoryShortName = $stateParams.categoryShortName;
+		itemsCtrl.items = items.data;
 	}
 
 })();
