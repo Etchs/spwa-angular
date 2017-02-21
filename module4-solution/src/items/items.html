@@ -1,14 +1,14 @@
-<table class="table table-hover" ng-if="$ctrl.categoryItems && $ctrl.categoryItems.length>0">
+<table class="table table-hover" ng-if="$ctrl.categoryData && $ctrl.categoryData.menu_items && $ctrl.categoryData.menu_items.length>0">
   <tr>
     <th>Menu Item</th>
     <th>Short Name</th>
     <th>Description</th>
   </tr>
-  <tr ng-repeat="item in $ctrl.categoryItems">
+  <tr ng-repeat="item in $ctrl.categoryData.menu_items">
     <td>{{ item.name }}</td>
     <td>{{ item.short_name }}</td>
     <td>{{ item.description }}</td>
   </tr>
 </table>
 
-<div ng-if="!($ctrl.categoryItems.length>0)">Nothing found!</div>
+<div ng-if="!($ctrl.categoryData.menu_items.length>0)">Nothing found!</div>

@@ -9,7 +9,7 @@
 	function ItemsController(items, $stateParams) {
 		var itemsCtrl = this;
 		itemsCtrl.categoryShortName = $stateParams.categoryShortName;
-		itemsCtrl.items = items.data;
+		itemsCtrl.data = items.data;
 	}
 
 })();

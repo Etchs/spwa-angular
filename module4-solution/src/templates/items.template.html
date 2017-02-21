@@ -3,5 +3,5 @@
 
 <span> {{ itemsCtrl.categoryShortName }} </span>
 
-<h4>Menu items for the "{{ itemsCtrl.categoryShortName }}" category</h4>
-<items category-items="itemsCtrl.items"></items>
+<h4>Menu items for the "{{ itemsCtrl.data.category.name }} ({{ itemsCtrl.data.category.short_name }})" category</h4>
+<items category-data="itemsCtrl.data"></items>

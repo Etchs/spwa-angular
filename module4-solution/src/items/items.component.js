@@ -5,7 +5,7 @@
 		.component('items', {
 			templateUrl: 'src/items/items.html',
 			bindings: {
-				categoryItems: '<'
+				categoryData: '<'
 			}
 		});
 
