@@ -4,9 +4,9 @@
 	angular.module('public')
 		.controller('SignupController', SignupController);
 
-	SignupController.$inject = ['MenuService'];
+	SignupController.$inject = ['MenuService', 'UserService'];
 
-	function SignupController(MenuService) {
+	function SignupController(MenuService, UserService) {
 		var $ctrl = this;
 
 		$ctrl.submit = function() {
@@ -14,7 +14,13 @@
 			if (response.error) {
 				$ctrl.invalidShortname = true;
 			} else {
-				// TODO: use UserService to save user information
+				UserService.saveUserInfo({
+					firstname: $ctrl.firstname,
+					lastname: $ctrl.lastname,
+					email: $ctrl.email,
+					phone: $ctrl.phone,
+					favorite: response
+				});
 				$ctrl.completed = true;
 			}
 		};
