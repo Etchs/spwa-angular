@@ -10,19 +10,21 @@
 		var $ctrl = this;
 
 		$ctrl.submit = function() {
-			var response = MenuService.getMenuItem($ctrl.shortname);
-			if (response.error) {
-				$ctrl.invalidShortname = true;
-			} else {
-				UserService.saveUserInfo({
-					firstname: $ctrl.firstname,
-					lastname: $ctrl.lastname,
-					email: $ctrl.email,
-					phone: $ctrl.phone,
-					favorite: response
-				});
-				$ctrl.completed = true;
-			}
+			MenuService.getMenuItem($ctrl.shortname).then(function(response) {
+				if (response.data.error) {
+					$ctrl.invalidShortname = true;
+				} else {
+					UserService.saveUserInfo({
+						firstname: $ctrl.firstname,
+						lastname: $ctrl.lastname,
+						email: $ctrl.email,
+						phone: $ctrl.phone,
+						favorite: response.data
+					});
+					$ctrl.completed = true;
+				}
+			});
+
 		};
 	}
 
