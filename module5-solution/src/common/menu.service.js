@@ -31,7 +31,7 @@
     };
 
     service.getMenuItem = function(shortname) {
-      return $http.get(ApiPath + '/menu_item/' + shortname + '.json');
+      return $http.get(ApiPath + '/menu_items/' + shortname + '.json');
     };
 
   }
