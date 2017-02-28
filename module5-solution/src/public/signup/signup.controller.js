@@ -11,20 +11,17 @@
 
 		$ctrl.submit = function() {
 			MenuService.getMenuItem($ctrl.shortname).then(function(response) {
-				if (response.data.error) {
-					$ctrl.invalidShortname = true;
-				} else {
-					UserService.saveUserInfo({
-						firstname: $ctrl.firstname,
-						lastname: $ctrl.lastname,
-						email: $ctrl.email,
-						phone: $ctrl.phone,
-						favorite: response.data
-					});
-					$ctrl.completed = true;
-				}
+				UserService.saveUserInfo({
+					firstname: $ctrl.firstname,
+					lastname: $ctrl.lastname,
+					email: $ctrl.email,
+					phone: $ctrl.phone,
+					favorite: response.data
+				});
+				$ctrl.completed = true;
+			}).catch(function(error){
+				$ctrl.invalidShortname = true;
 			});
-
 		};
 	}
 
