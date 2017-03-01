@@ -11,6 +11,7 @@
 
 		$ctrl.submit = function() {
 			MenuService.getMenuItem($ctrl.shortname).then(function(response) {
+				$ctrl.invalidShortname = false;
 				UserService.saveUserInfo({
 					firstname: $ctrl.firstname,
 					lastname: $ctrl.lastname,
@@ -19,6 +20,14 @@
 					favorite: response.data
 				});
 				$ctrl.completed = true;
+			}).catch(function(error){
+				$ctrl.invalidShortname = true;
+			});
+		};
+
+		$ctrl.checkShortname = function() {
+			MenuService.getMenuItem($ctrl.shortname).then(function(response) {
+				$ctrl.invalidShortname = false;
 			}).catch(function(error){
 				$ctrl.invalidShortname = true;
 			});

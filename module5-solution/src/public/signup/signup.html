@@ -2,7 +2,9 @@
   <fieldset>
       <form name='regForm' novalidate>
       	<div class="form-group row">
-      		<label for="firstname" class="col-3 col-form-label">First Name</label>
+      		<div class="col-3">
+      			<label for="firstname" class="col-3 col-form-label">First Name</label>
+  			</div>
       		<div class="col-9">
 		        <input class="form-control" id="firstname" type="text" name="firstname"
 		          placeholder="Enter your first name"
@@ -44,12 +46,12 @@
         <div class="form-group row">
         	<label for="phone" class="col-3 col-form-label">Phone</label>
         	<div class="col-9">
-		        <input class="form-control" id="email" type="text" name="phone"
+		        <input class="form-control" id="phone" type="text" name="phone"
 		          placeholder="Phone ###-###-####"
 		          ng-model="signupCtrl.phone"
-		          pattern="(\d{3})-(\d{3})-(\d{4})">
+		          minlength="5">
 		        <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
-		        	Phone must be in the format ###-###-####.
+		        	Phone must be at least 5 digits.
 		        </span>
 	        </div>
         </div>
@@ -60,11 +62,13 @@
 		        <input class="form-control" id="shortname" type="text" name="shortname" placeholder="Enter your favorite dish menu number"
 		          ng-model="signupCtrl.shortname"
 		          required
-		          minlength="2">
+		          minlength="2"
+		          ng-focus="focus=true"
+		          ng-blur="signupCtrl.checkShortname()">
 	        	<span ng-if="(regForm.shortname.$error.minlength || regForm.shortname.$error.required) && regForm.shortname.$touched">
 	            	Menu item number name must be at least 2 characters long
 	        	</span>
-	        	<span ng-if="signupCtrl.invalidShortname">
+	        	<span ng-if="signupCtrl.invalidShortname && !focus">
 	            	No such menu number exists
 	        	</span>
         	</div>
