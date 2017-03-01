@@ -47,7 +47,7 @@
         	<label for="phone" class="col-3 col-form-label">Phone</label>
         	<div class="col-9">
 		        <input class="form-control" id="phone" type="text" name="phone"
-		          placeholder="Phone ###-###-####"
+		          placeholder="Enter 5 digits at least"
 		          ng-model="signupCtrl.phone"
 		          minlength="5">
 		        <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
@@ -63,12 +63,12 @@
 		          ng-model="signupCtrl.shortname"
 		          required
 		          minlength="2"
-		          ng-focus="focus=true"
+		          ng-focus="signupCtrl.focus=true"
 		          ng-blur="signupCtrl.checkShortname()">
 	        	<span ng-if="(regForm.shortname.$error.minlength || regForm.shortname.$error.required) && regForm.shortname.$touched">
 	            	Menu item number name must be at least 2 characters long
 	        	</span>
-	        	<span ng-if="signupCtrl.invalidShortname && !focus">
+	        	<span ng-if="signupCtrl.invalidShortname && !signupCtrl.focus">
 	            	No such menu number exists
 	        	</span>
         	</div>

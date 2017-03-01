@@ -26,6 +26,7 @@
 		};
 
 		$ctrl.checkShortname = function() {
+			$ctrl.focus = false;
 			MenuService.getMenuItem($ctrl.shortname).then(function(response) {
 				$ctrl.invalidShortname = false;
 			}).catch(function(error){
