@@ -1,6 +1,6 @@
 <div class="container">
 	<div ng-if="!myinfoCtrl.userInfo.firstname">Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></div>
-	<div ng-if="!myinfoCtrl.userInfo.firstname">
+	<div ng-if="myinfoCtrl.userInfo.firstname">
 		<dl class="row">
 			<dt class="col-sm-3">First Name</dt>
 			<dd class="col-sm-9">{{myinfoCtrl.userInfo.firstname}}</dd>
