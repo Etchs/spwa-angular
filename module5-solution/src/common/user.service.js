@@ -18,6 +18,16 @@
       service.favorite = userInfo.favorite;
     };
 
+    service.getUserInfo = function() {
+      return {
+        firstname: service.firstname,
+        lastname: service.lastname,
+        email: service.email,
+        phone: service.phone,
+        favorite: service.favorite
+      };
+    };
+
   }
 
 
