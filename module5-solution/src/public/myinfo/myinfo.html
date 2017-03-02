@@ -23,7 +23,7 @@
 			  <dd class="col-sm-8">{{myinfoCtrl.userInfo.favorite.description}}</dd>
 			  <dt class="col-sm-4">Picture</dt>
 			  <dd class="col-sm-8" ng-if="!myinfoCtrl.userInfo.favorite.image_present">No image is present for this item in the database.</dd>
-			  <dd class="col-sm-8" ng-if="myinfoCtrl.userInfo.favorite.image_present"><img class="img-responsive" width="250" height="150" ng-src="{{$ctrl.basePath}}/images/{{myinfoCtrl.userInfo.favorite.short_name}}.jpg" alt="{{myinfoCtrl.userInfo.favorite.name}}"></img></dd>
+			  <dd class="col-sm-8" ng-if="myinfoCtrl.userInfo.favorite.image_present"><img class="img-responsive" width="250" height="150" ng-src="{{myinfoCtrl.basePath}}/images/{{myinfoCtrl.userInfo.favorite.short_name}}.jpg" alt="{{myinfoCtrl.userInfo.favorite.name}}"></img></dd>
 			</dl>
 			</dd>
 		</dl>
