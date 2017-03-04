@@ -49,8 +49,7 @@
 		        <input class="form-control" id="phone" type="text" name="phone"
 		          placeholder="Enter 5 digits at least"
 		          ng-model="signupCtrl.phone"
-		          minlength="5"
-		          pattern="(\d{5})">
+		          pattern="(\d{3})-(\d{3})-(\d{4})">
 		        <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
 		        	Phone must be at least 5 digits.
 		        </span>
